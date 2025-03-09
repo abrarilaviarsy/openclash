@@ -9,20 +9,9 @@ local UTIL = require "luci.util"
 local fs = require "luci.openclash"
 local uci = require "luci.model.uci".cursor()
 
-m = Map(openclash,  translate("Rule Providers Append"))
+m = Map(openclash)
 m.pageaction = false
-m.description=translate("Attention:")..
-"<br/>"..translate("The game proxy is a test function and does not guarantee the availability of rules")..
-"<br/>"..translate("Preparation steps:")..
-"<br/>"..translate("1. In the <server and policy group management> page, create the policy group and node you are going to use, and apply the configuration (when adding nodes, you must select the policy group you want to join). Policy group type suggestion: fallback, game nodes must be support UDP and not a Vmess")..
-"<br/>"..translate("2. Click the <manage third party game rules> or <manage third party rule set> button to enter the rule list and download the rules you want to use")..
-"<br/>"..translate("3. On this page, set the corresponding configuration file and policy group of the rule you have downloaded, and save the settings")..
-"<br/>"..translate("4. Install the TUN or Meta core")..
-"<br/>"..
-"<br/>"..translate("When setting this page, if the groups is empty, please go to the <server and group management> page to add")..
-"<br/>"..
-"<br/>"..translate("Introduction to rule set usage: https://wiki.metacubex.one/config/rule-providers/content/")
-
+m.description=translate("")
 function IsRuleFile(e)
 e=e or""
 local e=string.lower(string.sub(e,-6,-1))
@@ -115,9 +104,6 @@ uci:foreach("openclash", "groups",
 
 o:value("DIRECT")
 o:value("REJECT")
-o:value("REJECT-DROP")
-o:value("PASS")
-o:value("GLOBAL")
 o.rmempty = true
 
 -- [[ Edit Other Rule Provider ]] --
@@ -194,9 +180,6 @@ uci:foreach("openclash", "groups",
 
 o:value("DIRECT")
 o:value("REJECT")
-o:value("REJECT-DROP")
-o:value("PASS")
-o:value("GLOBAL")
 o.rmempty = true
 
 o = s:option(Value, "interval", translate("Rule Providers Interval(s)"))
@@ -290,6 +273,5 @@ o.write = function()
   HTTP.redirect(DISP.build_url("admin", "services", "openclash"))
 end
 
-m:append(Template("openclash/toolbar_show"))
 
 return m

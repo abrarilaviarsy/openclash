@@ -120,8 +120,8 @@ function o.cfgvalue(self, section)
 	if self.map:get(section, "other_parameters") == nil then
 		return "# Example:\n"..
 		"# Only support YAML, four spaces need to be reserved at the beginning of each line to maintain formatting alignment\n"..
-		"# 示例：\n"..
-		"# 仅支持 YAML, 每行行首需要多保留四个空格以使脚本处理后能够与上方配置保持格式对齐\n"..
+		"# Example:\n"..
+		"# Only supports YAML, four more spaces need to be reserved at the beginning of each line so that the script can maintain format alignment with the above configuration after processing\n"..
 		"#    header:\n"..
 		"#      User-Agent:\n"..
 		"#      - \"Clash/v1.18.0\"\n"..
@@ -133,7 +133,7 @@ function o.cfgvalue(self, section)
 		"#      additional-prefix: \"provider1 prefix |\"\n"..
 		"#      additional-suffix: \"| provider1 suffix\"\n"..
 		"#      proxy-name:\n"..
-		"#      - pattern: \"IPLC-(.*?)倍\"\n"..
+		"#      - pattern: \"IPLC-(.*?) times\"\n"..
 		"#        target: \"iplc x $1\"\n"..
 		"#    exclude-type: \"ss|http\"\n"..
 		"\n"..
@@ -189,6 +189,5 @@ o.write = function()
    luci.http.redirect(m.redirect)
 end
 
-m:append(Template("openclash/toolbar_show"))
 m:append(Template("openclash/config_editor"))
 return m

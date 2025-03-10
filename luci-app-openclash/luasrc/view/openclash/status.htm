@@ -12,7 +12,7 @@
 .radio-button{
 	display: none;
 	white-space: nowrap;
-	background-color: #d1d1d1;
+	background-color: #547185;
 	border-radius: 4px;
 }
 
@@ -22,15 +22,15 @@
    
 .radio-button label {
 	display: inline-block;
-	font-size: 14px;
-	padding: 4px 5px;
+	font-size: 12px;
+	padding: 2px 3px;
 	color: white;
 	cursor: pointer;
 	border-radius: 4px;
 }
 
 .radio-button input[type="radio"]:checked+label {
-	background-color: #1080c1;
+	background-color: #002b49;
 }
 </style>
 </head>
@@ -43,15 +43,15 @@
 	<table width="100%">
 	    <tr>
 	  	<td colspan="4" width="100%">
-	  		<p style="margin: 10px 0; text-align: center">
-				<img id="_logo" src="/luci-static/resources/openclash/img/logo.png?<%=random%>" loading="lazy" width="150px" height="150px" onload="return logo_check(this,this.src,'https://raw.githubusercontent.com/vernesong/OpenClash/<%=RELEASE_BRANCH%>/img/meta.png')" onerror="return logo_error(this,'/luci-static/resources/openclash/img/logo.png?<%=random%>')" title="Hello, World!" alt="OpenClash" onclick="return homepage()" />
+	  		<p style="margin: 0px 0; text-align: center">
+				<img id="_logo" src="/luci-static/resources/openclash/img/logo.png?<%=random%>" loading="lazy" width="250px" onload="return logo_check(this,this.src,'/luci-static/resources/openclash/img/meta.png')" onerror="return logo_error(this,'/luci-static/resources/openclash/img/logo.png?<%=random%>')" title="Hello, World!" alt="OpenClash" onclick="return homepage()" />
 			</p>
-	  		<p id="_clashversion" style="margin: 10px 0; text-align: center">
+	  		<p id="_clashversion" style="margin: 0px 0; text-align: center">
 				<img src="/luci-static/resources/openclash/img/version.svg?<%=random%>" alt="currentversion" height="21px" onclick="return go_update()">
 	  		</p>
 	    </td></tr>
 	    <tr><td colspan="4" width="100%">
-     		<p style="margin: 10px 0; text-align: center">
+     		<p style="margin: 0px 0; text-align: center">
 				<img id="gitbook" src="/luci-static/resources/openclash/img/Wiki.svg?<%=random%>" loading="lazy" alt="GitBook" width="50px" height="20px" onerror="return imgerrorfuns(this,'https://img.shields.io/badge/Wiki--lightgrey?logo=GitBook&style=social')" onclick="return gitbookpage()" />
 				&nbsp;&nbsp;&nbsp;
 				<img id="wiki" src="/luci-static/resources/openclash/img/Tutorials.svg?<%=random%>" loading="lazy" alt="Wiki" width="75px" height="20px" onerror="return imgerrorfuns(this,'https://img.shields.io/badge/Tutorials--lightgrey?logo=Wikipedia&style=social')" onclick="return wikipage()" />
@@ -64,14 +64,14 @@
         	</p>
         </td></tr>
 	    <tr><td width="100%" colspan="4">
-	  		<div style="margin: 10px 0; text-align: center" id="_clashstart">
+	  		<div style="margin: 0px 0; text-align: center" id="_clashstart">
 	  			<b><%:Tip: after started, please wait patiently until the connection is normal%></b>
 			</div>
 	    </td></tr>
 		<tr><td width="25%"><%:Main Program%></td><td  width="25%" align="left"><span id="_clash"><%:Collecting data...%></span><span id="_watchdog"></span></td><td width="25%"><%:Control Panel Login IP%></td><td width="25%" align="left" id="_daip"><%:Collecting data...%></td></tr>
 		<tr><td width="20%"><%:Running Mode%></td><td  width="30%" align="left"><span id="_mode"><%:Collecting data...%></span><span id="radio-ru-mode" class="radio-button">
 				<input type="radio" id="normal" name="radios-ru" value="" checked onclick="return switch_run_mode(this.value)"/>
-				<label for="normal" id="run_normal"><%:Compat%></label>
+				<label for="normal" id="run_normal"><%:Compatible%></label>
 				<input type="radio" id="tun" name="radios-ru" value="-tun" onclick="return switch_run_mode(this.value)"/>
 				<label for="tun"><%:TUN%></label>
 				<input type="radio" id="mix" name="radios-ru" value="-mix" onclick="return switch_run_mode(this.value)"/>
@@ -87,7 +87,7 @@
 				</span></td><td width="25%"><%:Control Panel Login Secret%></td><td width="25%" align="left" id="_dase"><%:Collecting data...%></td></tr>
 		<tr><td colspan="4"><div style="margin: 10px 0; text-align: center"><span id="_web" style="width: 25%; display: inline-block;"></span><span id="_webm" style="width: 25%; display: inline-block;"><%:Collecting data...%></span><span id="_webz" style="width: 25%; display: inline-block;"><%:Collecting data...%></span><span id="_webo" style="width: 25%; display: inline-block;"></span></div></td></tr>
 		<tr id="tool_label2"><td colspan="4">
-			<div style="margin: 10px 0; text-align: center">
+			<div style="margin: 0px 0; text-align: center">
 <span>
 &nbsp;&nbsp;<%:Up:%>&nbsp;
 	<span id="upload_">
@@ -160,7 +160,7 @@
 			</div>
 		</td>
 	</tr>
-	<tr id="hid_1"><td width="100%" colspan="4"><p style="margin: 10px 0; text-align: center"><b><%:Quick Operation%></b></p></td></tr>
+	<tr id="hid_1"><td width="100%" colspan="4"><p style="margin: 0px 0; text-align: center"><b><%:Quick Operation%></b></p></td></tr>
     <tr id="hid_2">
 		<td width="25%" align="center"><p style="margin: 10px 0; text-align: center" id="_close_all_connection"><%:Collecting data...%></p></td>
 		<td width="25%" align="center"><p style="margin: 10px 0; text-align: center" id="_reload_firewall"><%:Collecting data...%></p></td>
@@ -507,7 +507,7 @@
 				else if (status.mode == "redir-host" || status.mode == "redir-host-tun" ||  status.mode == "redir-host-mix")
 				{
 					mode.innerHTML = status.clash && status.watchdog ? "<b style=color:green><%:Redir-Host%></b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;" : '<b style=color:red><%:Not Running%></b>&nbsp;&nbsp;&nbsp;';
-					radio_run_normal.innerHTML = "<%:Compat%>"
+					radio_run_normal.innerHTML = "<%:Compatible%>"
 				};
 				for (i=0; i<radio_ru.length; i++) {
 					if (radio_ru[i].value == (status["mode"].split("-")[2] == undefined ? "" : ("-" + status["mode"].split("-")[2])) && ! radio_ru[i].checked) {
